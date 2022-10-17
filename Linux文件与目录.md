@@ -105,19 +105,38 @@ chmod a-x test.txt
 
 #### 二、Linux目录配置
 
-##### 1. Linux目录配置依据--FHS（Filesystem Hierarchy Standard）
+##### 1. Linux目录配置依据
 
+- Filesystem Hierarchy Standard（FHS）；
 
+##### 2. 目录树
 
+- 目录树起始点为根目录（/，root）；
+- 每一个目录不仅能使用本地partion的文件系统，还能使用网络上的filesystem；
+- 每一个文件在此目录树中的文件名都是独一无二的；
 
+![image-20221017205053618](/Users/berry/Library/Application Support/typora-user-images/image-20221017205053618.png)
 
+##### 3. 绝对路径与相对路径
 
+- 绝对路径：由根目录开启写起的文件名或目录名称；
+- 相对路径：相对于目前路径的文件名写法；
+- .代表当前目录，也可用./表示；
+- ..代表上一层目录，也可用../表示；
 
+##### 4. CentOS的观察
 
+- 查看核心版本
 
+```bash
+uname -r
+```
 
+- 查看操作系统的位版本
 
-
+```bash
+uname -m
+```
 
 
 
