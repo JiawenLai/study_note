@@ -247,3 +247,10 @@ mv [options] source1 source2 source3 .... directory
 -u  ：若目标文件已经存在，且 source 比较新，才会更新 （update）
 ```
 
+##### 5. 取得路径的文件名称与路径名称
+
+```bash
+basename 文件名
+dirname 文件名
+```
+
