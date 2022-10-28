@@ -356,3 +356,41 @@ dirname 文件名
   ```
 
 ##### 4. 非纯文本文件
+
+- od
+
+  ```bash
+  od [-t TYPE] 文件
+  ```
+
+  ```
+  -t  ：后面可以接各种“类型 （TYPE）”的输出，例如：
+        a       ：利用默认的字符来输出；
+        c       ：使用 ASCII 字符来输出
+        d[size] ：利用十进制（decimal）来输出数据，每个整数占用 size Bytes ；
+        f[size] ：利用浮点数值（floating）来输出数据，每个数占用 size Bytes ；
+        o[size] ：利用八进位（octal）来输出数据，每个整数占用 size Bytes ；
+        x[size] ：利用十六进制（hexadecimal）来输出数据，每个整数占用 size Bytes ；
+  ```
+
+##### 5. 修改文件时间或新文件
+
+- modification time （mtime）：文件内容数据变更时会更新时间；
+
+- status time（ctime）：文件状态（权限与属性）变更时会更新时间；
+
+- access time（atime）：文件内容被读取时会更新时间。
+
+  ```bash
+  touch [-acdmt] 文件
+  ```
+
+  ```
+  -a  ：仅修订 access time；
+  -c  ：仅修改文件的时间，若该文件不存在则不创建新文件；
+  -d  ：后面可以接欲修订的日期而不用目前的日期，也可以使用 --date="日期或时间"
+  -m  ：仅修改 mtime ；
+  -t  ：后面可以接欲修订的时间而不用目前的时间，格式为[YYYYMMDDhhmm]
+  ```
+
+  
