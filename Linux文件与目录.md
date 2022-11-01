@@ -23,7 +23,7 @@
 
 ##### 2. 修改文件属性与权限
 
-2.1 改变所属劝阻，chgrp
+2.1 改变所属群组，chgrp
 
 ```bash
 chgrp user1 test.txt #第二个字段为群组名，需在etc/group文件中，最后一个字段为文件名
