@@ -173,6 +173,36 @@ ulimit [-SHacdfltu] [配额]
 
 - 变量内容的删除
 
+  ```bash
+  ${变量#关键字} #若变量内容从头开始的数据符合“关键字”，则将符合的最短数据删除
+  ${变量##关键字} #若变量内容从头开始的数据符合“关键字”，则将符合的最长数据删除
+  ```
+  
+  ```bash
+  ${变量%关键字} #若变量内容从尾向前的数据符合“关键字”，则将符合的最短数据删除
+  ${变量%%关键字} #若变量内容从尾向前的数据符合“关键字”，则将符合的最长数据删除
+  ```
+  
+- 变量内容的取代
+
+  ```bash
+  ${变量/旧字串/新字串} #若变量内容符合“旧字串”则“第一个旧字串会被新字串取代”
+  ${变量//旧字串/新字串}	#若变量内容符合“旧字串”则“全部的旧字串会被新字串取代”
+  ```
+
+- 变量的测试
+
+  | 变量设置方式     | str 没有设置       | str 为空字串       | str 已设置非为空字串 |
+  | ---------------- | ------------------ | ------------------ | -------------------- |
+  | var=${str-expr}  | var=expr           | var=               | var=$str             |
+  | var=${str:-expr} | var=expr           | var=expr           | var=$str             |
+  | var=${str+expr}  | var=               | var=expr           | var=expr             |
+  | var=${str:+expr} | var=               | var=               | var=expr             |
+  | var=${str=expr}  | str=expr var=expr  | str 不变 var=      | str 不变 var=$str    |
+  | var=${str:=expr} | str=expr var=expr  | str=expr var=expr  | str 不变 var=$str    |
+  | var=${str?expr}  | expr 输出至 stderr | var=               | var=$str             |
+  | var=${str:?expr} | expr 输出至 stderr | expr 输出至 stderr | var=$str             |
+
   
 
 
