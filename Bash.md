@@ -203,7 +203,67 @@ ulimit [-SHacdfltu] [配额]
   | var=${str?expr}  | expr 输出至 stderr | var=               | var=$str             |
   | var=${str:?expr} | expr 输出至 stderr | expr 输出至 stderr | var=$str             |
 
-  
 
+#### 三、命令别名与历史命令
 
+##### 1. 命令别名设置
+
+- 查看命令别名
+
+  ```bash
+  alias
+  ```
+
+- 设置命令别名
+
+  ```bash
+  alias 别名=指令
+  ```
+
+- 取消命令别名
+
+  ```bash
+  unalias 别名
+  ```
+
+##### 2. 历史命令
+
+```bash
+history [n]
+history [-c]
+history [-raw] histfiles
+```
+
+```bash
+n ：数字，意思是“要列出最近的 n 笔命令列表”的意思；
+-c：将目前的 shell 中的所有 history 内容全部消除；
+-a：将目前新增的 history 指令新增入 histfiles 中，若没有加 histfiles ，则默认写入 ~/.bash_history；
+-r：将 histfiles 的内容读到目前这个 shell 的 history 记忆中；
+-w：将目前的 history 记忆内容写入 histfiles 中；
+```
+
+```bash
+!number #执行第几笔指令的意思
+!command #由最近的指令向前搜寻“指令串开头为 command”的那个指令，并执行
+!! #执行上一个指令
+```
+
+#### 四、Bash Shell的操作环境
+
+##### 1. 路径与指令搜寻顺序
+
+- 以相对/绝对路径执行指令，例如“ /bin/ls ”或“ ./ls ”；
+- 由 alias 找到该指令来执行；
+- 由 bash 内置的 （builtin） 指令来执行；
+- 通过 $PATH 这个变量的顺序搜寻到的第一个指令来执行。
+
+##### 2. bash的进站与欢迎讯息
+
+- 本地登录：/etc/issue；
+- 远端登录：/etc/issue.net；
+- 提示信息：/etc/motd；
+
+##### 3. bash的环境配置文件
+
+- 
 
