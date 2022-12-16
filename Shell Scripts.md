@@ -154,4 +154,58 @@
 
 ##### 4. function功能
 
-- 在 shell script 当中的 function 的设置一定要在程序的最前面
+- 在 shell script 当中的 function 的设置一定要在程序的最前面；
+
+-  function 拥有内置变量，他的内置变量与 shell script 很类似， 函数名称代表示 $0 ，而后续接的变量也是以 $1, $2... 来取代；
+
+  ```bash
+  function fname（） {
+  	程序段
+  }
+  ```
+
+##### 5. 循环
+
+- while do done，until do done
+
+  ```bash
+  while [ condition ]  <==中括号内的状态就是判断式
+  do            <==do 是循环的开始！
+  	程序段落
+  done          <==done 是循环的结束
+  ```
+
+  ```bash
+  until [ condition ]
+  do
+  	程序段落
+  done
+  ```
+
+- for...do...done
+
+  ```bash
+  for var in con1 con2 con3 ...
+  do
+  	程序段
+  done
+  ```
+
+  ```bash
+  for （（ 初始值; 限制值; 执行步阶 ））
+  do
+  	程序段
+  done
+  ```
+
+##### 6. shell script的追踪与debug
+
+```bash
+sh [-nvx] scripts.sh
+
+选项与参数：
+-n：不要执行 script，仅查询语法的问题；
+-v：再执行 sccript 前，先将 scripts 的内容输出到屏幕上；
+-x：将使用到的 script 内容显示到屏幕上，这是很有用的参数；
+```
+
